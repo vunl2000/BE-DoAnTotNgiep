@@ -1,8 +1,8 @@
 const {
   Account,
   mValidateRefreshPassWord,
-} = require("../../models/admin-md/ModelAdmin");
-const Token = require("../../models/tokens/TokensAdmin");
+} = require("../../models/users-md/ModelUser");
+const Token = require("../../models/tokens/TokensUser");
 const mSendEmail = require("../../util/SendEmail");
 const crypto = require("crypto");
 class LinkResetController {
@@ -35,7 +35,7 @@ class LinkResetController {
               token: crypto.randomBytes(32).toString("hex"),
             }).save();
 
-            const link = `${process.env.BASE_URL}/account-ad/link-reset-password-admin/${user._id}/${token.token}`;
+            const link = `${process.env.BASE_URL}/account-user/link-reset-password-user/${user._id}/${token.token}`;
             await mSendEmail(user.email, "Đặt lại mật khẩu của mình", link);
             res.status(200).json({
               messeage:

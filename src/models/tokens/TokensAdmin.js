@@ -18,4 +18,4 @@ const mTokensSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("add_token", mTokensSchema);
+module.exports = mongoose.model("add_token_admin", mTokensSchema);

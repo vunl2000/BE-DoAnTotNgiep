@@ -8,7 +8,6 @@ require("dotenv").config();
 //Kết nối đến Data
 mDB.connect();
 
-
 //Body -parse
 app.use(express.json());
 app.use(
@@ -19,6 +18,8 @@ app.use(
 
 //gọi đến phương thức index trong routes
 routes(app);
+
+app.use("/images/upfirstimg", express.static("/images/upfirstimg"));
 
 app.listen(port, () => {
   console.log(`Đang chạy cổng ${port}`);

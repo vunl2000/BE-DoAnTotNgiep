@@ -21,7 +21,7 @@ const mAccount = new Schema(
     timestamps: true,
   }
 );
-const Account = mongoose.model("ad_accounts", mAccount);
+const Account = mongoose.model("user_accounts", mAccount);
 
 const mValidateRegister = (user) => {
   const shema = Joi.object({

@@ -1,9 +1,9 @@
 const {
   Account,
   mValidateRefreshPassWordNew,
-} = require("../../models/admin-md/ModelAdmin");
+} = require("../../models/users-md/ModelUser");
 const bcrypt = require("bcryptjs");
-const Token = require("../../models/tokens/TokensAdmin");
+const Token = require("../../models/tokens/TokensUser");
 
 class UpdatePasswordWithLinkController {
   async mUpdatePasswordWithLink(req, res, next) {
